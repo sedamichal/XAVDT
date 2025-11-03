@@ -11,14 +11,12 @@
             "id": "e56510d18503dd79",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Úloha 1.md",
-                "mode": "preview",
-                "source": true
+                "file": "Zdroje/XAVDAT_KU16.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Úloha 1"
+              "icon": "lucide-file-text",
+              "title": "XAVDAT_KU16"
             }
           }
         ]
@@ -94,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Úloha 1.md",
+                "file": "Zdroje/XAVDAT_KU16.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Zpětné odkazy pro Úloha 1"
+              "title": "Zpětné odkazy pro XAVDAT_KU16"
             }
           },
           {
@@ -113,12 +111,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Úloha 1.md",
+                "file": "Zdroje/XAVDAT_KU16.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Odchozí odkazy z Úloha 1"
+              "title": "Odchozí odkazy z XAVDAT_KU16"
             }
           },
           {
@@ -142,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Úloha 1.md",
+                "file": "Zdroje/XAVDAT_KU16.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Přehled Úloha 1"
+              "title": "Přehled XAVDAT_KU16"
             }
           },
           {
@@ -182,11 +180,13 @@
   },
   "active": "e56510d18503dd79",
   "lastOpenFiles": [
+    "Zdroje/AVDAT2013_vektmatice.pdf",
+    "Úloha 1.pdf",
+    "Úloha 1.md",
+    "Zdroje/XAVDAT_KU16.pdf",
+    "Zdroje",
     "Bez názvu 1.base",
     "Bez názvu.base",
-    "Úloha 1.md",
-    "AVDAT2013_vektmatice.pdf",
-    "XAVDAT_KU16.pdf",
     "Nepotvrzeno 712935.crdownload"
   ]
 }
