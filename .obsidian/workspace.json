@@ -11,12 +11,14 @@
             "id": "e56510d18503dd79",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Zdroje/XAVDAT_KU16.pdf"
+                "file": "Task_3/Úloha3.md",
+                "mode": "preview",
+                "source": true
               },
-              "icon": "lucide-file-text",
-              "title": "XAVDAT_KU16"
+              "icon": "lucide-file",
+              "title": "Úloha3"
             }
           }
         ]
@@ -42,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Průzkumník souborů"
+              "title": "Files"
             }
           },
           {
@@ -168,22 +170,23 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Otevřít rychlé přepínání": false,
-      "graph:Otevřít graf": false,
-      "canvas:Vytvořit nový canvas": false,
-      "daily-notes:Otevřít dnešní poznámku": false,
-      "templates:Vložit šablonu": false,
-      "command-palette:Otevřít paletu příkazů": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-git:Open Git source control": false
     }
   },
   "active": "e56510d18503dd79",
   "lastOpenFiles": [
+    "Task_3/Úloha3.pdf",
+    "Zdroje/XAVDAT_KU16.pdf",
     "Zdroje/AVDAT2013_vektmatice.pdf",
     "Úloha 1.pdf",
     "Úloha 1.md",
-    "Zdroje/XAVDAT_KU16.pdf",
     "Zdroje",
     "Bez názvu 1.base",
     "Bez názvu.base",

@@ -21,7 +21,7 @@ $$X_{n\times{(k+1)}}$$
 ---
 $n$ je počet pozorovaných hodnot
 
-$k$ je počet paramterů modelu
+$k$ je počet parametrů modelu
 
 $$\epsilon_n$$
 ---
@@ -37,6 +37,9 @@ $n$ je počet pozorovaných hodnot
 Reziduální suma čtverců:
 $$
 RSS=(y-Xb)^T(y-Xb) = y^Ty - y^TXb - (Xb)^Ty + (Xb)^T(Xb) = y^Ty - y^TXb - b^TX^Ty + b^TX^TXb = y^Ty - 2b^TX^Ty + b^TX^TXb
+$$
+$$
+RSS=y^Ty - 2b^TX^Ty + b^TX^TXb
 $$
 Minimalizace RSS
 - Derivace podle vektoru $b$
