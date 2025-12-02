@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uloha4.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Regression Equation Section</p>
+<table>
+<thead>
+<tr>
+<th>Independent Variable</th>
+<th>Regression Coefficient b(i)</th>
+<th>Standard Error Sb(i)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intercept</td>
+<td>15.814</td>
+<td>0.748</td>
+</tr>
+<tr>
+<td>x1</td>
+<td>-1.015</td>
+<td>0.063</td>
+</tr>
+<tr>
+<td>x2</td>
+<td>0.065</td>
+<td>0.003</td>
+</tr>
+</tbody>
+</table>
+<p>Analysis of Variance Section</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>DF</th>
+<th>Sum of Squares</th>
+<th>Mean Square</th>
+<th>F-Ratio</th>
+<th>Prob</th>
+<th>Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>2</td>
+<td>102.77</td>
+<td>51.38</td>
+<td>207.6</td>
+<td>0.0000</td>
+<td></td>
+</tr>
+<tr>
+<td>Error</td>
+<td>12</td>
+<td>2.97</td>
+<td>0.247</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="napi%C5%A1te-tvar-regresn%C3%ADho-modelu-pro-tento-p%C5%99%C3%ADklad">Napište tvar regresního modelu pro tento příklad</h2>
+<p>Tvar regresního modelu se skládá z koeficientů (sloupec $b(i)$) pro <strong>Intercept</strong> a <strong>nezávislé proměnné</strong> ($x_1, x_2$).<br>
+Regresní rovnice:$$\hat{y} = 15.814 - 1.015 x_1 + 0.065 x_2$$</p>
+<p>Interpretace koeficientů:</p>
+<ul>
+<li>
+<p><strong>Intercept</strong> ($b_0 = 15.814$):<br>Očekávaná hodnota závislé proměnné ($\hat{y}$), pokud jsou obě nezávislé proměnné ($x_1$ a $x_2$) rovny nule.</p>
+</li>
+<li>
+<p><strong>$x_1$</strong> ($b_1 = -1.015$):<br>Zvýšení $x_1$ o jednu jednotku vede ke snížení $\hat{y}$ o $1.015$ jednotek, za předpokladu, že $x_2$ zůstane konstantní (ceteris paribus).</p>
+</li>
+<li>
+<p><strong>$x_2$</strong> ($b_2 = 0.065$):<br>Zvýšení $x_2$ o jednu jednotku vede ke zvýšení $\hat{y}$ o $0.065$ jednotek, za předpokladu, že $x_1$ zůstane konstantní (ceteris paribus).</p>
+</li>
+</ul>
+<h2 id="jak%C3%BD-byl-rozsah-v%C3%BDb%C4%9Bru-kolik-%C5%99%C3%A1dk%C5%AF-v-datov%C3%A9-matici">Jaký byl rozsah výběru (kolik řádků v datové matici)?</h2>
+<p>Rozsah výběru ($N$) se vypočítá pomocí stupňů volnosti (DF) z tabulky:<br></p>
+<ul>
+<li>DF pro Model je $k = 2$ (počet nezávislých proměnných $x_1, x_2$).</li>
+<li>DF pro Error (rezidua) je $N - k - 1 = 12$.<br>
+Dosazením a řešením pro $N$:<br>
+$$N - 2 - 1 = 12$$<br>
+$$N - 3 = 12$$<br>
+$$N = 15$$<br>
+Rozsah výběru (počet řádků): $$N = 15$$</li>
+</ul>
+<h2 id="lze-zam%C3%ADtnout-n%C4%9Bkterou-z-hypot%C3%A9z-%C5%BEe-regresn%C3%AD-koeficienty-jsou-nulov%C3%A9">Lze zamítnout některou z hypotéz, že regresní koeficienty jsou nulové?</h2>
+<p><strong>Testování celého modelu (F-test):</strong><br><br>
+F-Ratio: $207.6$<br><br>
+Prob Level (p-hodnota): $0.0000$</p>
+<p>Protože je $p$-hodnota ($0.0000$) menší než jakákoli obvyklá hladina významnosti ($\alpha=0.05$ nebo $\alpha=0.01$), zamítáme nulovou hypotézu, že všechny regresní koeficienty ($x_1, x_2$) jsou nulové. Model je jako celek statisticky vysoce významný.</p>
+<p><strong>Testování jednotlivých koeficientů (t-test):</strong><br><br>
+K ověření, zda lze zamítnout hypotézu, že daný regresní koeficient ($\beta_i$) je nulový ($H_0: \beta_i = 0$), se používá <strong>$t-test$</strong>.<br><br>
+Hodnoty $t$-statistiky se počítají jako poměr koeficientu k jeho standardní chybě:<br>
+$$t_i = \frac{b_i}{S_{b_i}}$$<br>
+Výpočet kritické hodnoty:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> scipy.stats <span class="hljs-keyword">import</span> t
+
+ALPHA = <span class="hljs-number">0.05</span>
+
+df = <span class="hljs-number">12</span>
+
+prob = <span class="hljs-number">1</span> - (ALPHA / <span class="hljs-number">2</span>)
+
+t_critical = t.ppf(prob, df)
+
+print(t_critical)
+</div></code></pre>
+<p>Zamítáme $H_0$, pokud $|t_{\text{vypočítané}}| \ge 2.179$</p>
+<table>
+<thead>
+<tr>
+<th>Koeficient</th>
+<th>b(i)</th>
+<th>Sb(i)</th>
+<th>​t-statistika</th>
+<th>Interpretace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intercept</td>
+<td>15.814</td>
+<td>0.748</td>
+<td>21.1417</td>
+<td>Zamítáme $H_0$</td>
+</tr>
+<tr>
+<td>$x_1$</td>
+<td>-1.015</td>
+<td>0.063</td>
+<td>-16.1111</td>
+<td>Zamítáme $H_0$</td>
+</tr>
+<tr>
+<td>$x_2$</td>
+<td>0.065</td>
+<td>0.003</td>
+<td>21.6667</td>
+<td>Zamítáme $H_0$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="spo%C4%8D%C3%ADtejte-hodnotu-indexu-determinace">Spočítejte hodnotu indexu determinace</h2>
+<p>Index determinace $R^2$ udává podíl variability závisle proměnné, který je vysvětlen modelem. Vypočítá se jako poměr součtu čtverců modelu $\text{SS}<em>{\text{Model}}$ k celkovému součtu čtverců $\text{SS}</em>{\text{Total}}$.<br>
+$$\text{SS}<em>{\text{Total}} = \text{SS}</em>{\text{Model}} + \text{SS}<em>{\text{Error}}$$<br>
+$$\text{SS}</em>{\text{Total}} = 102.77 + 2.97 = 105.74$$<br>
+$$R^2 = \frac{\text{SS}<em>{\text{Model}}}{\text{SS}</em>{\text{Total}}} = \frac{102.77}{105.74}$$<br>
+Hodnota indexu determinace $R^2$:<br>
+$$R^2 \approx 0.9719$$</p>
+<p>Interpretace:<br><br>
+$97.19%$ celkové variability závisle proměnné je vysvětleno regresním modelem $\rArr$ jde o velmi silný model.</p>
+<hr>
+<h2 id="statistick%C3%BD-kontext">Statistický kontext</h2>
+<p>Princip testování nulovosti regresního koeficientu pomocí $t$-testu je založen na následujícím:</p>
+<p>Hypotéza ($H_0$):<br><br>
+Nulová hypotéza tvrdí, že regresní koeficient ($\beta_i$) je roven nule ($H_0: \beta_i = 0$). To by znamenalo, že nezávislá proměnná ($x_i$) nemá žádný lineární vliv na závisle proměnnou ($y$) v populaci.</p>
+<p>Testová statistika ($t$):<br><br>
+Pro testování této hypotézy se používá $t$-statistika, která se vypočítá jako:$$t = \frac{b_i}{S_{b_i}}$$<br><br>
+Kde $b_i$ je odhadnutý koeficient (z výstupu regrese) a $S_{b_i}$ je jeho standardní chyba.</p>
+<p>Rozhodnutí:<br><br>
+Tato vypočtená $t$-hodnota se porovná s kritickou hodnotou $t$ (při dané hladině významnosti $\alpha$ a příslušném počtu stupňů volnosti) nebo se použije $p$-hodnota (která často bývá uvedena v plném výstupu regrese). Pokud je absolutní hodnota $t$-statistiky vysoká (nebo $p$-hodnota nízká, typicky menší než $0.05$), nulovou hypotézu zamítáme.</p>
+
+</body>
+</html>
