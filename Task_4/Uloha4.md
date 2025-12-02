@@ -1,11 +1,13 @@
 Regression Equation Section
-|Independent Variable|Regression Coefficient b(i)|Standard Error Sb(i)|
+
+| Independent Variable | Regression Coefficient b(i) | Standard Error Sb(i) |
 |---|---|---|
 |Intercept|15.814|0.748|
 |x1|-1.015|0.063|
 |x2|0.065|0.003|
 
 Analysis of Variance Section
+
 |Source|DF|Sum of Squares|Mean Square|F-Ratio|Prob|Level|
 |---|---|---|---|---|---|---|
 |Model|2|102.77|51.38|207.6|0.0000|
@@ -75,7 +77,7 @@ Hodnota indexu determinace $R^2$:
 $$R^2 \approx 0.9719$$
 
 Interpretace:<br>
-$97.19\%$ celkové variability závisle proměnné je vysvětleno regresním modelem $\rArr$ jde o velmi silný model.
+$97.19\%$ celkové variability závisle proměnné je vysvětleno regresním modelem $->$ jde o velmi silný model.
 
 ---
 ## Statistický kontext
