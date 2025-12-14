@@ -4,18 +4,18 @@ Obě metody slouží k nalezení klasifikačního pravidla, které odděluje tř
 
 Rozdíl spočívá v jejich statistických předpokladech a způsobu, jakým modelují podmíněnou pravděpodobnost.
 
-### Kdy použít Lineární diskriminační analýzu (LDA)
+### Kdy použít Lineární diskriminační funkci (LDF)
 
-LDA je generativní model, který modeluje rozdělení vstupních dat $X$ v rámci každé třídy $Y$ ($P(X|Y)$).
+LDF je generativní model, který modeluje rozdělení vstupních dat $X$ v rámci každé třídy $Y$ ($P(X|Y)$).
 
-**Použití LDA je vhodné, když:**
+**Použití LDF je vhodné, když:**
 - Předpoklad normality je splněn: datové body pro každou třídu pocházejí z vícerozměrného normálního rozdělení.
 - Předpoklad homoskedasticity je splněn: třídy sdílejí stejnou kovarianční matici (tj. rozptyl a korelace jsou ve všech třídách stejné, jen se liší střední hodnoty).
-- Počet vzorků je malý: LDA je stabilnější a efektivnější než Logistická regrese, zejména pokud je počet trénovacích vzorků malý a počet prediktorů je velký.
-- Více než dvě třídy (Multiklasifikace): LDA je navržena pro libovolný počet tříd ($K > 2$)
+- Počet vzorků je malý: LDF je stabilnější a efektivnější než Logistická regrese, zejména pokud je počet trénovacích vzorků malý a počet prediktorů je velký.
+- Více než dvě třídy (Multiklasifikace): LDF je navržena pro libovolný počet tříd ($K > 2$)
 
 **Proc?**
-Pokud jsou předpoklady o normalitě a stejné kovarianci splněny, je LDA teoreticky optimální a poskytuje stabilnější a přesnější odhady, což vede k nižší míře chyby klasifikace než LR.
+Pokud jsou předpoklady o normalitě a stejné kovarianci splněny, je LDF teoreticky optimální a poskytuje stabilnější a přesnější odhady, což vede k nižší míře chyby klasifikace než LR.
 
 ### Kdy použít Logistickou regresi (LR)
 
@@ -29,9 +29,9 @@ Logistická regrese je diskriminační model, který přímo modeluje podmíněn
 
 **Proč?**
 
-- Robustnost vůči rozdělení dat: Logistická regrese je robustnější, protože nevyžaduje, aby vícerozměrná data pocházela z normálního rozdělení.
+- Robustnost vůči rozdělení dat: LR je robustnější, protože nevyžaduje, aby vícerozměrná data pocházela z normálního rozdělení.
 - Odhad pravděpodobnosti: Přímý výstupní odhad pravděpodobnosti je užitečný pro řízení prahů rozhodování.
 
-Pokud můžeme předpokládat, že data jsou přibližně normálně rozložena a mají podobné rozptyly (kovariance) v rámci tříd použijeme **LDA**.
+Pokud můžeme předpokládat, že data jsou přibližně normálně rozložena a mají podobné rozptyly (kovariance) v rámci tříd použijeme **LDF**.
 
-Pokud jsou data silně nenormální, nebo pokud se rozptyly mezi třídami výrazně liší, použijeme **Logistickou regresi**.
+Pokud jsou data silně nenormální, nebo pokud se rozptyly mezi třídami výrazně liší, použijeme **LR**.
