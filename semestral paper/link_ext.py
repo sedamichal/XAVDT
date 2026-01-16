@@ -42,13 +42,11 @@ class Link_ext(ExtBase):
         plt.tight_layout()
         plt.show()
 
-    def show_cluster_stats(self, n_clusters=3):
-        # Přiřazení vzorků do shluků
+    def show_cluster_stats(self):
         clusters = fcluster(
             self._linkage_matrix, self._get_target_values_count(), criterion="maxclust"
         )
-
-        # Vytvoření křížové tabulky (Crosstab)
+        
         df_compare = pd.crosstab(
             clusters,
             self._y,
@@ -60,7 +58,6 @@ class Link_ext(ExtBase):
             GT(df_compare)
             .tab_header(
                 title="Srovnání Shluků a Odrůd",
-                subtitle=f"Rozdělení vzorků do {n_clusters} shluků pomocí metody Ward",
             )
             .pipe(GTStyle().apply)
         )

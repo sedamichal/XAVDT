@@ -118,18 +118,20 @@ class KMeansExt(ExtBase):
     def _get_data_for_kmeans(self):
         X = self._data.drop(columns=self._excluded_columns)
         scaler = StandardScaler()
-        return scaler.fit_transform(X)
+        return scaler.fit_transform(X)    
 
-    def show_contingency(self):
-        y = self._data[self._excluded_columns[0]].to_list()
-        contingency = pd.crosstab(
-            y, self._clusters, rownames=["Skutečná třída"], colnames=["K-means shluk"]
-        )
+    def show_cluster_stats(self):
+        df_compare = pd.crosstab(
+            self._clusters,
+            self._y,
+            rownames=["Predikovaný Shluk"],
+            colnames=["Skutečná Odrůda"],
+        ).reset_index()
 
         gt = (
-            GT(contingency)
+            GT(df_compare)
             .tab_header(
-                title="Kontingenční tabulka (skutečné třídy vs. K-means shluky):"
+                title="Srovnání Shluků a Odrůd",
             )
             .pipe(GTStyle().apply)
         )
